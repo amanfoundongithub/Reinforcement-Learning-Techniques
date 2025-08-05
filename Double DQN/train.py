@@ -12,3 +12,4 @@ env = gym.make("LunarLander-v2")
 ########### Train the agent ##################
 agent = RLAgent(env, device = device) 
 agent.train()
+agent.save("double_dqn_agent.pth")
