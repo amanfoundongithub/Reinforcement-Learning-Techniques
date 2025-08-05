@@ -156,3 +156,14 @@ class RLAgent:
 
         plt.ioff()
         plt.show()
+        
+    
+    def save(self, filepath: str):
+        torch.save(self.__main_network.state_dict(), filepath)
+        print(f"AGENT: Model saved to {filepath} successfully!")
+
+    def load(self, filepath: str, load_target: bool = True):
+        self.__main_network.load_state_dict(torch.load(filepath, map_location=self.__device))
+        if load_target:
+            self.__target_network.load_state_dict(self.__main_network.state_dict())
+        print(f"AGENT: Model loading complete from {filepath}!")
