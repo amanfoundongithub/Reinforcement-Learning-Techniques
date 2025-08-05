@@ -14,7 +14,7 @@ from IPython.display import clear_output
 
 class RLAgent:
     def __init__(self, 
-                 env: gym.Env,
+                 env: gym.Env,   
                  hidden_dim: int = 256,
                  discount_factor: float = 0.99,
                  batch_size: int = 256,
